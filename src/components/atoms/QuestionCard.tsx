@@ -1,7 +1,7 @@
 import { Card, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material"
 import { type Question as QuestionType } from "../../types"
 import { useQuestionStore } from "../../store/questions"
-import { QuestionAnswerInfo } from "../QuestionAnswerInfo"
+import { QuestionAnswerInfo } from "./QuestionAnswerInfo"
 
 
 const getBackgroudColor = (info:QuestionType, index: number) =>{
@@ -53,8 +53,11 @@ export const QuestionCard = ({info}: {info: QuestionType}) => {
             )}
         </List>
     </Card>
+    
+    {/* {console.log(info.explanation, info.source)} */}
+    
     {info.userSelectedAnswer != null && 
-        <QuestionAnswerInfo />
+        <QuestionAnswerInfo answerInfo={info.explanation}/>
     }
     </>
   )

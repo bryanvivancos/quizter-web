@@ -41,7 +41,7 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
             if (isCorrectUserAnswer) confetti({
                 origin: { y: 0.8}
             })
-            //cambiar esta informacion en la copiua de la pregunta
+            //cambiar esta informacion en la copia de la pregunta
             newQuestions[questionIndex] = {
                 ...questionInfo,
                 isCorrectUserAnswer,
@@ -49,6 +49,8 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
             }
             //actualizamos el estado
             set({questions: newQuestions})
+
+            return newQuestions[questionIndex]
 
         },
 
