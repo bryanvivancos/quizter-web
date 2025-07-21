@@ -4,9 +4,12 @@ import { Start } from './components/atoms/Start'
 import { useQuestionStore } from './store/questions'
 import { LightBulb } from './components/atoms/LightBulb'
 import { Game } from './components/Game'
+import { useQuestionsData } from './hooks/useQuestionsData'
+import { Results } from './components/Results'
 
 function App() {
   const questions = useQuestionStore(state => state.questions)
+  const {unanswered} = useQuestionsData()
 
   return (
     <main >
@@ -24,7 +27,8 @@ function App() {
           <Start/>
         </>
       }
-      {questions.length >0 && <Game/>}
+      {questions.length >0 && unanswered > 0 && <Game/>}
+      {questions.length >0 && unanswered === 0 && <Results/>}
 
      </Container>
 
