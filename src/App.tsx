@@ -13,7 +13,7 @@ function App() {
 
   return (
     <main >
-     <Container maxWidth="sm" sx={{ height:'100dvh', alignContent:'center', justifyItems:'center'}}>
+     <Container maxWidth="sm" sx={{ height:'100dvh', alignContent:'center', justifyItems:'center', paddingY: 4 }}>
       <Stack direction='row' gap={0} alignItems={'center'} justifyContent={'center'} sx={{ marginBottom: 2 }}>
         <LightBulb/>
         <Typography variant='h2' component='h1'>
