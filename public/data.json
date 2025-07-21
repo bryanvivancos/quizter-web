@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "question": "¿Cuál es el río más largo del mundo?",
+    "code": "",
+    "answers": ["Nilo", "Amazonas", "Yangtsé", "Misisipi"],
+    "correctAnswer": 1,
+    "explanation": "El río Amazonas es considerado el más largo del mundo según varias mediciones modernas, con más de 7,000 km de longitud. Aunque históricamente se creía que el Nilo era el más largo, estudios recientes han demostrado que el Amazonas tiene una mayor extensión si se considera una de sus fuentes en Perú.",
+    "source": "https://www.nationalgeographic.com/environment/article/amazon-river"
+  },
+  {
+    "id": 2,
+    "question": "¿En qué continente se encuentra Egipto?",
+    "code": "",
+    "answers": ["Asia", "Europa", "África", "Oceanía"],
+    "correctAnswer": 2,
+    "explanation": "Egipto está ubicado en el noreste de África, aunque la península del Sinaí pertenece a Asia. Sin embargo, la mayoría del territorio y la población egipcia se encuentran en el continente africano.",
+    "source": "https://es.wikipedia.org/wiki/Egipto"
+  },
+  {
+    "id": 3,
+    "question": "¿Quién pintó la Mona Lisa?",
+    "code": "",
+    "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Miguel Ángel"],
+    "correctAnswer": 0,
+    "explanation": "La Mona Lisa, también conocida como La Gioconda, fue pintada por Leonardo da Vinci entre 1503 y 1519. Es una de las obras más famosas del Renacimiento y se encuentra en el Museo del Louvre, en París.",
+    "source": "https://www.louvre.fr/en/explore/the-palace/mona-lisa"
+  },
+  {
+    "id": 4,
+    "question": "¿Cuál es el idioma más hablado en el mundo?",
+    "code": "",
+    "answers": ["Inglés", "Hindi", "Español", "Chino mandarín"],
+    "correctAnswer": 3,
+    "explanation": "El chino mandarín es el idioma más hablado del mundo por número de hablantes nativos, con más de 900 millones. Esto se debe a la enorme población de China.",
+    "source": "https://www.ethnologue.com/guides/most-spoken-languages"
+  },
+  {
+    "id": 5,
+    "question": "¿Qué planeta del sistema solar es el más grande?",
+    "code": "",
+    "answers": ["Tierra", "Júpiter", "Saturno", "Marte"],
+    "correctAnswer": 1,
+    "explanation": "Júpiter es el planeta más grande del sistema solar, con un diámetro de aproximadamente 142,984 km. Su gran tamaño, compuesto en su mayoría de gases, lo convierte en un gigante gaseoso.",
+    "source": "https://solarsystem.nasa.gov/planets/jupiter/overview/"
+  },
+  {
+    "id": 6,
+    "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
+    "code": "",
+    "answers": ["1935", "1939", "1941", "1945"],
+    "correctAnswer": 1,
+    "explanation": "La Segunda Guerra Mundial comenzó el 1 de septiembre de 1939, cuando Alemania invadió Polonia. Esto provocó que Reino Unido y Francia le declararan la guerra a Alemania dos días después.",
+    "source": "https://www.britannica.com/event/World-War-II"
+  },
+  {
+    "id": 7,
+    "question": "¿Cuál es la capital de Australia?",
+    "code": "",
+    "answers": ["Sídney", "Canberra", "Melbourne", "Brisbane"],
+    "correctAnswer": 1,
+    "explanation": "Canberra fue elegida como capital de Australia en 1908 como un compromiso entre las dos principales ciudades rivales: Sídney y Melbourne.",
+    "source": "https://www.australia.gov.au/about-australia/our-country/our-capital-city"
+  },
+  {
+    "id": 8,
+    "question": "¿Qué científico formuló la teoría de la relatividad?",
+    "code": "",
+    "answers": ["Isaac Newton", "Galileo Galilei", "Albert Einstein", "Nikola Tesla"],
+    "correctAnswer": 2,
+    "explanation": "Albert Einstein formuló la teoría de la relatividad en 1905 (especial) y 1915 (general), revolucionando la física moderna al demostrar cómo el tiempo y el espacio están relacionados.",
+    "source": "https://www.britannica.com/biography/Albert-Einstein"
+  },
+  {
+    "id": 9,
+    "question": "¿Qué instrumento mide la actividad sísmica?",
+    "code": "",
+    "answers": ["Barómetro", "Termómetro", "Sismógrafo", "Anemómetro"],
+    "correctAnswer": 2,
+    "explanation": "El sismógrafo es el instrumento utilizado para detectar y registrar las ondas sísmicas producidas por terremotos u otras fuentes subterráneas.",
+    "source": "https://www.usgs.gov/programs/earthquake-hazards/seismographs"
+  },
+  {
+    "id": 10,
+    "question": "¿Cuál es el país más poblado del mundo?",
+    "code": "",
+    "answers": ["India", "China", "Estados Unidos", "Indonesia"],
+    "correctAnswer": 0,
+    "explanation": "Según datos recientes, India ha superado a China como el país más poblado del mundo, con más de 1,430 millones de habitantes en 2023.",
+    "source": "https://www.un.org/en/desa/india-overtakes-china-world-most-populous-country"
+  },
+  {
+    "id": 11,
+    "question": "¿Qué país inventó la pólvora?",
+    "code": "",
+    "answers": ["India", "Egipto", "China", "Grecia"],
+    "correctAnswer": 2,
+    "explanation": "La pólvora fue inventada en China en el siglo IX por alquimistas que buscaban el elixir de la inmortalidad. Es uno de los Cuatro Grandes Inventos de la antigua China.",
+    "source": "https://www.britannica.com/technology/gunpowder"
+  },
+  {
+    "id": 12,
+    "question": "¿Cuál es el océano más grande del mundo?",
+    "code": "",
+    "answers": ["Atlántico", "Índico", "Ártico", "Pacífico"],
+    "correctAnswer": 3,
+    "explanation": "El océano Pacífico es el más grande del planeta, cubriendo más de 63 millones de millas cuadradas, lo que representa más del 30% de la superficie terrestre.",
+    "source": "https://oceanservice.noaa.gov/facts/biggestocean.html"
+  },
+  {
+    "id": 13,
+    "question": "¿Quién escribió 'Cien años de soledad'?",
+    "code": "",
+    "answers": ["Mario Vargas Llosa", "Pablo Neruda", "Gabriel García Márquez", "Jorge Luis Borges"],
+    "correctAnswer": 2,
+    "explanation": "Gabriel García Márquez, escritor colombiano, publicó 'Cien años de soledad' en 1967, obra maestra del realismo mágico y de la literatura latinoamericana.",
+    "source": "https://es.wikipedia.org/wiki/Cien_años_de_soledad"
+  },
+  {
+    "id": 14,
+    "question": "¿Qué gas es esencial para la respiración humana?",
+    "code": "",
+    "answers": ["Oxígeno", "Nitrógeno", "Dióxido de carbono", "Hidrógeno"],
+    "correctAnswer": 0,
+    "explanation": "El oxígeno es vital para la respiración celular en humanos y animales, permitiendo la obtención de energía en las células.",
+    "source": "https://www.britannica.com/science/oxygen"
+  },
+  {
+    "id": 15,
+    "question": "¿En qué país se originaron los Juegos Olímpicos?",
+    "code": "",
+    "answers": ["Italia", "Grecia", "Francia", "Alemania"],
+    "correctAnswer": 1,
+    "explanation": "Los Juegos Olímpicos se originaron en la antigua Grecia, en la ciudad de Olimpia, alrededor del año 776 a.C. como parte de un festival en honor a Zeus.",
+    "source": "https://olympics.com/ioc/ancient-olympic-games"
+  },
+  {
+    "id": 16,
+    "question": "¿Cuál es el metal más ligero?",
+    "code": "",
+    "answers": ["Hierro", "Aluminio", "Litio", "Titanio"],
+    "correctAnswer": 2,
+    "explanation": "El litio es el metal más ligero y el más liviano de todos los sólidos metálicos. Es usado en baterías, aleaciones y farmacología.",
+    "source": "https://www.rsc.org/periodic-table/element/3/lithium"
+  },
+  {
+    "id": 17,
+    "question": "¿Qué órgano del cuerpo humano consume más energía?",
+    "code": "",
+    "answers": ["Hígado", "Cerebro", "Corazón", "Pulmones"],
+    "correctAnswer": 1,
+    "explanation": "El cerebro humano representa solo el 2% del peso corporal, pero consume alrededor del 20% de la energía total del cuerpo.",
+    "source": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4274594/"
+  },
+  {
+    "id": 18,
+    "question": "¿Qué país tiene la forma de una bota?",
+    "code": "",
+    "answers": ["Grecia", "Italia", "Portugal", "España"],
+    "correctAnswer": 1,
+    "explanation": "Italia es conocida por su forma de bota en el mapa. Esta característica geográfica es fácilmente reconocible.",
+    "source": "https://www.cia.gov/the-world-factbook/countries/italy/"
+  },
+  {
+    "id": 19,
+    "question": "¿Qué energía se obtiene del sol?",
+    "code": "",
+    "answers": ["Geotérmica", "Eólica", "Solar", "Nuclear"],
+    "correctAnswer": 2,
+    "explanation": "La energía solar se obtiene del sol y puede ser convertida en electricidad o calor mediante paneles solares y otras tecnologías.",
+    "source": "https://www.energy.gov/eere/solar/how-does-solar-work"
+  },
+  {
+    "id": 20,
+    "question": "¿Cuál es el animal terrestre más rápido del mundo?",
+    "code": "",
+    "answers": ["León", "Tigre", "Guepardo", "Antílope"],
+    "correctAnswer": 2,
+    "explanation": "El guepardo puede alcanzar velocidades de hasta 112 km/h, siendo el animal terrestre más veloz en distancias cortas.",
+    "source": "https://www.nationalgeographic.com/animals/mammals/facts/cheetah"
+  }
+]
