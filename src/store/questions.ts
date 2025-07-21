@@ -4,13 +4,13 @@ import confetti from 'canvas-confetti'
 import { persist } from 'zustand/middleware'
 
 interface State {
-    reset: any
     questions: Question[]
     currentQuestion: number
     fetchQuestions: (limit: number) => Promise<void>
     selectedAnswer: (questionId: number, answerIndex: number) => void
     goNextQuestion: () => void
     goPreviousQuestion: () => void
+    reset: () => void
 }
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
