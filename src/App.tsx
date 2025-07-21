@@ -9,8 +9,8 @@ function App() {
   const questions = useQuestionStore(state => state.questions)
 
   return (
-    <main>
-     <Container maxWidth="sm">
+    <main >
+     <Container maxWidth="sm" sx={{ height:'100dvh', alignContent:'center', justifyItems:'center'}}>
       <Stack direction='row' gap={0} alignItems={'center'} justifyContent={'center'} sx={{ marginBottom: 2 }}>
         <LightBulb/>
         <Typography variant='h2' component='h1'>
