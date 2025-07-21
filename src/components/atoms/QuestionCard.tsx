@@ -1,5 +1,5 @@
 import { Card, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material"
-import { type Question as QuestionType } from "../../types"
+import { type Question as QuestionType } from "../../store/types"
 import { useQuestionStore } from "../../store/questions"
 import { QuestionAnswerInfo } from "./QuestionAnswerInfo"
 

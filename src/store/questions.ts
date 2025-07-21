@@ -1,5 +1,5 @@
 import {create} from 'zustand'
-import {type Question} from '../types'
+import {type Question} from './types'
 import confetti from 'canvas-confetti'
 import { persist } from 'zustand/middleware'
 
@@ -13,13 +13,27 @@ interface State {
     reset: () => void
 }
 
+const JSONBIN_API_KEY = import.meta.env.JSONBIN_API_KEY
+const JSONBIN_API_URL = import.meta.env.JSONBIN_API_URL
+
+
+const API_URL = import.meta.env.PROD ? JSONBIN_API_URL : 'http://localhost:5173/data.json'
+
 export const useQuestionStore = create<State>()(persist((set, get) => {
     return {
         questions: [],
         currentQuestion: 0,
 
+
         fetchQuestions: async (limit: number) => {
-            const res = await fetch("http://localhost:5173/data.json")
+            const res = await fetch(`${API_URL}`,{
+                headers: {
+                    'X-Access-Key': JSONBIN_API_KEY
+                    }
+                })
+            if (!res.ok) {
+                throw new Error('Error al obtener preguntas desde JSONBin')
+            }
             const json = await res.json()
 
             const questions = json.sort(() => Math.random() - 0.5).slice(0,limit)
