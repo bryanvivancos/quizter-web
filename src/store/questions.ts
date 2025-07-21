@@ -17,7 +17,7 @@ interface State {
 // const JSONBIN_API_URL = import.meta.env.JSONBIN_API_URL
 
 
-const API_URL = import.meta.env.PROD ? 'https://quizter-1e34cft7n-bryan-josue-vivanco-silvas-projects.vercel.app/' : 'http://localhost:5173/'
+const API_URL = import.meta.env.PROD ? 'https://quizter-web.vercel.app/' : 'http://localhost:5173/'
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
     return {
