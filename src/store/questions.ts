@@ -13,11 +13,15 @@ interface State {
     reset: () => void
 }
 
-// const JSONBIN_API_KEY = import.meta.env.JSONBIN_API_KEY
-// const JSONBIN_API_URL = import.meta.env.JSONBIN_API_URL
+// const JSONBIN_API_KEY = import.meta.env.VITE_JSONBIN_API_KEY
+// const JSONBIN_API_URL = import.meta.env.VITE_JSONBIN_API_URL
+// const JSONBIN_MASTER_API_KEY = import.meta.env.VITE_JSONBIN_MASTER_API_KEY
 
 
 const API_URL = import.meta.env.PROD ? 'https://quizter-web.vercel.app/' : 'http://localhost:5173/'
+
+// const API_URL = import.meta.env.PROD ? JSONBIN_API_URL : 'http://localhost:5173/'
+// const API_URL = JSONBIN_API_URL
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
     return {
@@ -27,6 +31,20 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
 
         fetchQuestions: async (limit: number) => {
             const res = await fetch(`${API_URL}/data.json`)
+            if (!res.ok) {
+                throw new Error('Error al obtener preguntas desde JSONBin')
+            }
+            // ////////////////////////
+            // const res = await fetch(`${API_URL}`,{
+            //     method:'GET',
+            //     headers: {
+            //         'X-Master-Key': JSONBIN_MASTER_API_KEY,
+            //         'X-Access-Key': JSONBIN_API_KEY,
+            //         'Content-Type': 'application/json'
+            //         },
+            //     },
+            // )
+            //  ///////////////////////
             if (!res.ok) {
                 throw new Error('Error al obtener preguntas desde JSONBin')
             }

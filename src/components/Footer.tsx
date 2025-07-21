@@ -10,8 +10,8 @@ export const Footer = () => {
     <footer style={{ marginTop: '16px' }}>
         <strong> {`✅ ${correct} correctas - ❌ ${incorrect} incorrectas - ❓ ${unanswered} sin responder`}</strong>
         <div style={{ marginTop: '16px' }}>
-        <Button onClick={()=>reset()}>
-          Resetear Quiz
+        <Button onClick={() => reset()}>
+            Empezar de nuevo
         </Button>
         </div>
     </footer>
