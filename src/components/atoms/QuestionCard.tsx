@@ -41,7 +41,7 @@ export const QuestionCard = ({info}: {info: QuestionType}) => {
                         //deshabilita si ya se selecciono respuesta
                         disabled={info.userSelectedAnswer != null}
                         //se ejecuta funcion al  seleccionar respuesta
-                        onClick={createHandleClick(index)}
+                        onPointerUp={createHandleClick(index)}
                         // se coloca fondo verde o rojo a la respuesta seleccionada dependiendo si es True o False
                         sx={{
                             backgroundColor: getBackgroudColor(info,index)
