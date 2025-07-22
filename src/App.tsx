@@ -4,12 +4,14 @@ import { Start } from './components/atoms/Start'
 import { useQuestionStore } from './store/questions'
 import { LightBulb } from './components/atoms/LightBulb'
 import { Game } from './components/Game'
-import { useQuestionsData } from './hooks/useQuestionsData'
 import { Results } from './components/Results'
+// import { useQuestionsData } from './hooks/useQuestionsData'
 
 function App() {
+  // const {unanswered} = useQuestionsData()
   const questions = useQuestionStore(state => state.questions)
-  const {unanswered} = useQuestionsData()
+  const showResults = useQuestionStore(state => state.showResults)
+
 
   return (
     <main >
@@ -27,8 +29,9 @@ function App() {
           <Start/>
         </>
       }
-      {questions.length >0 && unanswered > 0 && <Game/>}
-      {questions.length >0 && unanswered === 0 && <Results/>}
+      {/* {questions.length >0 && unanswered > 0 && <Game/>} */}
+      {questions.length >0 && !showResults && <Game/>}
+      {questions.length >0 && showResults && <Results/>}
 
      </Container>
 

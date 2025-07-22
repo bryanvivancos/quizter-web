@@ -6,11 +6,14 @@ import { persist } from 'zustand/middleware'
 interface State {
     questions: Question[]
     currentQuestion: number
+    showResults: boolean
     fetchQuestions: (limit: number) => Promise<void>
     selectedAnswer: (questionId: number, answerIndex: number) => void
     goNextQuestion: () => void
     goPreviousQuestion: () => void
     reset: () => void
+    showResultsDisplay: () => void
+
 }
 
 // const JSONBIN_API_KEY = import.meta.env.VITE_JSONBIN_API_KEY
@@ -27,6 +30,7 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
     return {
         questions: [],
         currentQuestion: 0,
+        showResults: false,
 
 
         fetchQuestions: async (limit: number) => {
@@ -100,8 +104,12 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
             }
         },
 
+        showResultsDisplay: () => {
+            set({ showResults: true })
+        },
+
         reset: () => {
-            set({ currentQuestion: 0, questions:[] })
+            set({ currentQuestion: 0, questions:[], showResults:false })
         }
     }
 }, {
