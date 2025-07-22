@@ -5,6 +5,8 @@ import { persist } from 'zustand/middleware'
 
 interface State {
     questions: Question[]
+    loading: boolean //get questions
+    error: null // get questions
     currentQuestion: number
     showResults: boolean
     fetchQuestions: (limit: number) => Promise<void>
@@ -15,6 +17,9 @@ interface State {
     showResultsDisplay: () => void
 
 }
+
+// const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
+// const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
 
 // const JSONBIN_API_KEY = import.meta.env.VITE_JSONBIN_API_KEY
 // const JSONBIN_API_URL = import.meta.env.VITE_JSONBIN_API_URL
@@ -27,8 +32,11 @@ const API_URL = import.meta.env.PROD ? 'https://quizter-web.vercel.app/' : 'http
 // const API_URL = JSONBIN_API_URL
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
+    
     return {
         questions: [],
+        loading: true,
+        error: null,
         currentQuestion: 0,
         showResults: false,
 
@@ -38,23 +46,28 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
             if (!res.ok) {
                 throw new Error('Error al obtener preguntas desde JSONBin')
             }
-            // ////////////////////////
-            // const res = await fetch(`${API_URL}`,{
-            //     method:'GET',
-            //     headers: {
-            //         'X-Master-Key': JSONBIN_MASTER_API_KEY,
-            //         'X-Access-Key': JSONBIN_API_KEY,
-            //         'Content-Type': 'application/json'
-            //         },
-            //     },
-            // )
-            //  ///////////////////////
-            if (!res.ok) {
-                throw new Error('Error al obtener preguntas desde JSONBin')
-            }
             const json = await res.json()
+            const data = json
 
-            const questions = json.sort(() => Math.random() - 0.5).slice(0,limit)
+            // ////////////////////////
+            
+        //    const response = await fetch (`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        //         headers: {
+        //             "X-Master-Key": API_KEY,
+        //             "Content-Type": "application/json"
+        //         }
+        //     })
+
+        //     if (!response.ok) {
+        //         throw new Error(`Error al obtener preguntas: ${response.statusText}`)
+        //     }
+
+        //     const json = await response.json()
+        //     const data = json?.record
+
+            //  ///////////////////////
+
+            const questions =data.sort(() => Math.random() - 0.5).slice(0,limit)
             
             set({questions})
         },
