@@ -5,7 +5,7 @@ import { persist } from 'zustand/middleware'
 
 interface State {
     questions: Question[]
-    loading: boolean //get questions
+    isLoading: boolean //get questions
     error: null // get questions
     currentQuestion: number
     showResults: boolean
@@ -18,58 +18,64 @@ interface State {
 
 }
 
-// const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
-// const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
+const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
+const MASTER_KEY = import.meta.env.VITE_JSONBIN_MASTER_KEY;
+const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
 
-// const JSONBIN_API_KEY = import.meta.env.VITE_JSONBIN_API_KEY
-// const JSONBIN_API_URL = import.meta.env.VITE_JSONBIN_API_URL
-// const JSONBIN_MASTER_API_KEY = import.meta.env.VITE_JSONBIN_MASTER_API_KEY
+const PROD_API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`
+const API_URL = import.meta.env.PROD ? `${PROD_API_URL}` : 'http://localhost:5173/data.json'
 
-
-const API_URL = import.meta.env.PROD ? 'https://quizter-web.vercel.app/' : 'http://localhost:5173/'
-
-// const API_URL = import.meta.env.PROD ? JSONBIN_API_URL : 'http://localhost:5173/'
-// const API_URL = JSONBIN_API_URL
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
     
     return {
         questions: [],
-        loading: true,
+        isLoading: false,
         error: null,
         currentQuestion: 0,
         showResults: false,
 
 
         fetchQuestions: async (limit: number) => {
-            const res = await fetch(`${API_URL}/data.json`)
-            if (!res.ok) {
-                throw new Error('Error al obtener preguntas desde JSONBin')
-            }
-            const json = await res.json()
-            const data = json
+            // const res = await fetch(`${API_URL}/data.json`)
+            // if (!res.ok) {
+            //     throw new Error('Error al obtener preguntas desde JSONBin')
+            // }
+            // const json = await res.json()
+            // const data = json
 
             // ////////////////////////
-            
-        //    const response = await fetch (`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-        //         headers: {
-        //             "X-Master-Key": API_KEY,
-        //             "Content-Type": "application/json"
-        //         }
-        //     })
+        //    let {isLoading} = get()
+        //    isLoading = true
 
-        //     if (!response.ok) {
-        //         throw new Error(`Error al obtener preguntas: ${response.statusText}`)
-        //     }
+            set({isLoading:true, error:null})
 
-        //     const json = await response.json()
-        //     const data = json?.record
+            try {
+                const response = await fetch (`${API_URL}`, {
+                headers: {
+                    "X-Master-Key": MASTER_KEY,
+                    "X-Access-Key": API_KEY,
+                    }
+                })
 
-            //  ///////////////////////
+                if (!response.ok) {
+                    throw new Error(`Error al obtener preguntas: ${response.statusText}`)
+                }
 
-            const questions =data.sort(() => Math.random() - 0.5).slice(0,limit)
-            
-            set({questions})
+                const json = await response.json()
+                const data = json?.record
+
+                //  ///////////////////////
+
+                const questions =data.sort(() => Math.random() - 0.5).slice(0,limit)
+                
+                set({questions})
+
+            } catch (error:any) {
+                    set({ error: error.message || "Error desconocido" })
+            } finally {
+                set({isLoading:false})
+            }
         },
 
         selectedAnswer: (questionId: number, answerIndex: number) => {

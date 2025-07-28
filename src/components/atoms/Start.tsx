@@ -4,6 +4,7 @@ import { useQuestionStore } from '../../store/questions'
 export const LIMIT_QUESTIONS = 10
 
 export const Start = () => {
+  const isLoading = useQuestionStore(state => state.isLoading)
   const fetchQuestions = useQuestionStore(state => state.fetchQuestions)
   
   const handleClick = () => {
@@ -12,8 +13,8 @@ export const Start = () => {
 
 
   return (
-    <Button onClick={handleClick} variant='contained'> 
-        Empezar
+    <Button onClick={handleClick} loading={isLoading} variant='contained'> 
+        {isLoading ? 'Cargando':'Empezar'}
     </Button>
   )
 }

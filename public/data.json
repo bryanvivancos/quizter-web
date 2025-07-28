@@ -1,4 +1,5 @@
-[
+{
+  "record": [
   {
     "id": 1,
     "question": "¿Cuál es el río más largo del mundo?",
@@ -418,5 +419,186 @@
     "correctAnswer": 1,
     "explanation": "El nitrógeno representa aproximadamente el 78% del aire que respiramos. Es un gas inerte que no participa directamente en la respiración.",
     "source": "https://www.britannica.com/science/atmosphere"
+  },
+  {
+    "id": 31,
+    "question": "¿Cuál es el país más grande del mundo por superficie?",
+    "code": "",
+    "answers": ["Canadá", "China", "Rusia", "Estados Unidos"],
+    "correctAnswer": 2,
+    "explanation": "Rusia es el país más grande del mundo, con una superficie de más de 17 millones de km².",
+    "source": "https://www.worldatlas.com/articles/the-largest-countries-in-the-world-the-biggest-nations-as-determined-by-total-land-area.html"
+  },
+  {
+    "id": 32,
+    "question": "¿Qué animal es conocido por su memoria excepcional?",
+    "code": "",
+    "answers": ["Delfín", "Elefante", "Perro", "Cuervo"],
+    "correctAnswer": 1,
+    "explanation": "Los elefantes son famosos por su excelente memoria y habilidades sociales complejas.",
+    "source": "https://www.nationalgeographic.com/animals/mammals/facts/african-elephant"
+  },
+  {
+    "id": 33,
+    "question": "¿Qué país fue el primero en otorgar el voto a las mujeres?",
+    "code": "",
+    "answers": ["Estados Unidos", "Reino Unido", "Nueva Zelanda", "Australia"],
+    "correctAnswer": 2,
+    "explanation": "Nueva Zelanda fue el primer país en otorgar el derecho al voto a las mujeres en 1893.",
+    "source": "https://nzhistory.govt.nz/politics/womens-suffrage"
+  },
+  {
+    "id": 34,
+    "question": "¿Cuál es el elemento químico más abundante en el universo?",
+    "code": "",
+    "answers": ["Oxígeno", "Helio", "Hidrógeno", "Carbono"],
+    "correctAnswer": 2,
+    "explanation": "El hidrógeno es el elemento más abundante en el universo, compuesto por un solo protón.",
+    "source": "https://www.rsc.org/periodic-table/element/1/hydrogen"
+  },
+  {
+    "id": 35,
+    "question": "¿Qué ciudad es conocida como 'La Gran Manzana'?",
+    "code": "",
+    "answers": ["Los Ángeles", "Chicago", "Nueva York", "Miami"],
+    "correctAnswer": 2,
+    "explanation": "Nueva York es apodada 'La Gran Manzana', un término popularizado en los años 1920 por la prensa deportiva.",
+    "source": "https://www.ny.com/articles/bigapple.html"
+  },
+  {
+    "id": 36,
+    "question": "¿Qué invento revolucionó la industria textil en el siglo XVIII?",
+    "code": "",
+    "answers": ["Telar mecánico", "Máquina de vapor", "Husillo giratorio", "Motor eléctrico"],
+    "correctAnswer": 2,
+    "explanation": "El husillo giratorio, también conocido como Spinning Jenny, permitió hilar múltiples hilos a la vez.",
+    "source": "https://www.britannica.com/technology/Spinning-Jenny"
+  },
+  {
+    "id": 37,
+    "question": "¿Qué filósofo escribió 'La República'?",
+    "code": "",
+    "answers": ["Aristóteles", "Sócrates", "Platón", "Descartes"],
+    "correctAnswer": 2,
+    "explanation": "Platón escribió 'La República', una obra filosófica que aborda la justicia y la organización ideal del Estado.",
+    "source": "https://plato.stanford.edu/entries/plato-ethics-politics/"
+  },
+  {
+    "id": 38,
+    "question": "¿Qué país alberga las ruinas de Machu Picchu?",
+    "code": "",
+    "answers": ["Colombia", "México", "Perú", "Ecuador"],
+    "correctAnswer": 2,
+    "explanation": "Machu Picchu es una antigua ciudad inca ubicada en Perú, redescubierta en 1911 por Hiram Bingham.",
+    "source": "https://whc.unesco.org/en/list/274/"
+  },
+  {
+    "id": 39,
+    "question": "¿Qué órgano produce la insulina en el cuerpo humano?",
+    "code": "",
+    "answers": ["Hígado", "Estómago", "Páncreas", "Riñón"],
+    "correctAnswer": 2,
+    "explanation": "El páncreas produce insulina, una hormona crucial para regular los niveles de glucosa en sangre.",
+    "source": "https://www.niddk.nih.gov/health-information/endocrine-diseases/pancreas"
+  },
+  {
+    "id": 40,
+    "question": "¿Qué compositor creó la ópera 'La flauta mágica'?",
+    "code": "",
+    "answers": ["Bach", "Mozart", "Beethoven", "Vivaldi"],
+    "correctAnswer": 1,
+    "explanation": "Wolfgang Amadeus Mozart compuso 'La flauta mágica' en 1791, una de sus obras más conocidas.",
+    "source": "https://www.britannica.com/topic/The-Magic-Flute"
+  },
+  {
+    "id": 41,
+    "question": "¿Cuál es el desierto más grande del mundo?",
+    "code": "",
+    "answers": ["Sahara", "Antártida", "Gobi", "Ártico"],
+    "correctAnswer": 1,
+    "explanation": "La Antártida, a pesar de estar cubierta de hielo, es el desierto más grande del mundo por escasez de precipitaciones.",
+    "source": "https://www.britannica.com/place/Antarctica"
+  },
+  {
+    "id": 42,
+    "question": "¿Qué continente tiene más países?",
+    "code": "",
+    "answers": ["Asia", "África", "Europa", "América"],
+    "correctAnswer": 1,
+    "explanation": "África tiene 54 países reconocidos, siendo el continente con más naciones.",
+    "source": "https://www.worldometers.info/geography/how-many-countries-in-africa/"
+  },
+  {
+    "id": 43,
+    "question": "¿Qué famoso científico desarrolló las leyes del movimiento?",
+    "code": "",
+    "answers": ["Einstein", "Galileo", "Newton", "Bohr"],
+    "correctAnswer": 2,
+    "explanation": "Isaac Newton formuló las leyes del movimiento que son la base de la mecánica clásica.",
+    "source": "https://www.britannica.com/biography/Isaac-Newton"
+  },
+  {
+    "id": 44,
+    "question": "¿Cuál es la capital de Canadá?",
+    "code": "",
+    "answers": ["Toronto", "Montreal", "Vancouver", "Ottawa"],
+    "correctAnswer": 3,
+    "explanation": "Ottawa es la capital de Canadá y sede del gobierno federal.",
+    "source": "https://www.britannica.com/place/Ottawa"
+  },
+  {
+    "id": 45,
+    "question": "¿En qué año cayó el Muro de Berlín?",
+    "code": "",
+    "answers": ["1987", "1989", "1991", "1993"],
+    "correctAnswer": 1,
+    "explanation": "El Muro de Berlín cayó el 9 de noviembre de 1989, marcando el inicio del fin de la Guerra Fría.",
+    "source": "https://www.britannica.com/event/Berlin-Wall"
+  },
+  {
+    "id": 46,
+    "question": "¿Qué país es conocido como 'la tierra del sol naciente'?",
+    "code": "",
+    "answers": ["China", "Japón", "Corea del Sur", "Tailandia"],
+    "correctAnswer": 1,
+    "explanation": "Japón es conocido como 'la tierra del sol naciente', debido a su ubicación al este de Asia.",
+    "source": "https://www.cia.gov/the-world-factbook/countries/japan/"
+  },
+  {
+    "id": 47,
+    "question": "¿Qué animal es símbolo nacional de Australia?",
+    "code": "",
+    "answers": ["Koala", "Canguro", "Emú", "Dingo"],
+    "correctAnswer": 1,
+    "explanation": "El canguro es uno de los símbolos más representativos de Australia, presente incluso en su escudo.",
+    "source": "https://www.australia.com/en/facts-and-planning/about-australia/national-symbols.html"
+  },
+  {
+    "id": 48,
+    "question": "¿Qué instrumento se utiliza para medir la presión atmosférica?",
+    "code": "",
+    "answers": ["Termómetro", "Anemómetro", "Barómetro", "Higrómetro"],
+    "correctAnswer": 2,
+    "explanation": "El barómetro mide la presión atmosférica y se utiliza en meteorología para prever el tiempo.",
+    "source": "https://www.nationalgeographic.org/encyclopedia/barometer/"
+  },
+  {
+    "id": 49,
+    "question": "¿Qué escritor creó el personaje de Sherlock Holmes?",
+    "code": "",
+    "answers": ["Agatha Christie", "Arthur Conan Doyle", "Edgar Allan Poe", "Charles Dickens"],
+    "correctAnswer": 1,
+    "explanation": "Arthur Conan Doyle creó a Sherlock Holmes en 1887 en 'Estudio en escarlata'.",
+    "source": "https://www.britannica.com/biography/Arthur-Conan-Doyle"
+  },
+  {
+    "id": 50,
+    "question": "¿Qué civilización construyó las pirámides de Giza?",
+    "code": "",
+    "answers": ["Mesopotámica", "Romana", "Egipcia", "Persa"],
+    "correctAnswer": 2,
+    "explanation": "Las pirámides de Giza fueron construidas por los antiguos egipcios durante el Imperio Antiguo.",
+    "source": "https://www.history.com/topics/ancient-history/the-egyptian-pyramids"
   }
 ]
+}
