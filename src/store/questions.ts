@@ -19,15 +19,15 @@ interface State {
 }
 
 const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
-const MASTER_KEY = import.meta.env.VITE_JSONBIN_MASTER_KEY;
+// const MASTER_KEY = import.meta.env.VITE_JSONBIN_MASTER_KEY;
 const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
 
 const PROD_API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`
-const API_URL = import.meta.env.PROD ? `${PROD_API_URL}` : 'http://localhost:5173/data.json'
+// const API_URL = import.meta.env.PROD ? `${PROD_API_URL}` : 'http://localhost:5173/data.json'
 
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
-    
+
     return {
         questions: [],
         isLoading: false,
@@ -51,9 +51,9 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
             set({isLoading:true, error:null})
 
             try {
-                const response = await fetch (`${API_URL}`, {
+                const response = await fetch (`${PROD_API_URL}`, {
                 headers: {
-                    "X-Master-Key": MASTER_KEY,
+                    // "X-Master-Key": MASTER_KEY,
                     "X-Access-Key": API_KEY,
                     }
                 })
@@ -68,7 +68,7 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
                 //  ///////////////////////
 
                 const questions =data.sort(() => Math.random() - 0.5).slice(0,limit)
-                
+
                 set({questions})
 
             } catch (error:any) {
@@ -80,7 +80,7 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
 
         selectedAnswer: (questionId: number, answerIndex: number) => {
             // get nos retorna el objeto del estado useQuestionStore y con el podemos trabajar
-            const {questions} = get() 
+            const {questions} = get()
             // usar el structuredClone para cloner el objeto
             const newQuestions = structuredClone(questions)
             // encontramos el indice de la pregunta
