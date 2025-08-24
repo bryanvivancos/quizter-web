@@ -5,7 +5,7 @@ import { persist } from 'zustand/middleware'
 
 interface State {
     questions: Question[]
-    loading: boolean //get questions
+    isLoading: boolean //get questions
     error: null // get questions
     currentQuestion: number
     showResults: boolean
@@ -18,63 +18,66 @@ interface State {
 
 }
 
-// const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
-// const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
+//Variables y claves para jsonbin.io
 
-// const JSONBIN_API_KEY = import.meta.env.VITE_JSONBIN_API_KEY
-// const JSONBIN_API_URL = import.meta.env.VITE_JSONBIN_API_URL
-// const JSONBIN_MASTER_API_KEY = import.meta.env.VITE_JSONBIN_MASTER_API_KEY
+    // const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
+    // const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
 
+    // const PROD_API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`
+    // const API_URL = import.meta.env.PROD ? `${PROD_API_URL}` : 'http://localhost:5173/data.json'
 
-const API_URL = import.meta.env.PROD ? 'https://quizter-web.vercel.app/' : 'http://localhost:5173/'
+//Ruta a api propia en RENDER.COM
+const QUIZTER_API = `https://quizter-question-api.onrender.com/api/questions`
 
-// const API_URL = import.meta.env.PROD ? JSONBIN_API_URL : 'http://localhost:5173/'
-// const API_URL = JSONBIN_API_URL
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
-    
+
     return {
         questions: [],
-        loading: true,
+        isLoading: false,
         error: null,
         currentQuestion: 0,
         showResults: false,
 
 
         fetchQuestions: async (limit: number) => {
-            const res = await fetch(`${API_URL}/data.json`)
-            if (!res.ok) {
-                throw new Error('Error al obtener preguntas desde JSONBin')
+
+        //    let {isLoading} = get()
+        //    isLoading = true
+
+            set({isLoading:true, error:null})
+
+            try {
+                // const response = await fetch (`${PROD_API_URL}`, {
+                // headers: {
+                //     // "X-Master-Key": MASTER_KEY,
+                //     "X-Access-Key": API_KEY,
+                //     }
+                // })
+                const response = await fetch (`${QUIZTER_API}`)
+
+                if (!response.ok) {
+                    throw new Error(`Error al obtener preguntas: ${response.statusText}`)
+                }
+
+                const data = await response.json()
+
+                //  ///////////////////////
+
+                const questions =data.sort(() => Math.random() - 0.5).slice(0,limit)
+
+                set({questions})
+
+            } catch (error:any) {
+                    set({ error: error.message || "Error desconocido" })
+            } finally {
+                set({isLoading:false})
             }
-            const json = await res.json()
-            const data = json
-
-            // ////////////////////////
-            
-        //    const response = await fetch (`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
-        //         headers: {
-        //             "X-Master-Key": API_KEY,
-        //             "Content-Type": "application/json"
-        //         }
-        //     })
-
-        //     if (!response.ok) {
-        //         throw new Error(`Error al obtener preguntas: ${response.statusText}`)
-        //     }
-
-        //     const json = await response.json()
-        //     const data = json?.record
-
-            //  ///////////////////////
-
-            const questions =data.sort(() => Math.random() - 0.5).slice(0,limit)
-            
-            set({questions})
         },
 
         selectedAnswer: (questionId: number, answerIndex: number) => {
             // get nos retorna el objeto del estado useQuestionStore y con el podemos trabajar
-            const {questions} = get() 
+            const {questions} = get()
             // usar el structuredClone para cloner el objeto
             const newQuestions = structuredClone(questions)
             // encontramos el indice de la pregunta

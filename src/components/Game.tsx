@@ -17,7 +17,7 @@ export const Game = () => {
     const questionInfo = questions[currentQuestion]
 
   return (
-    <> 
+    <>
         <Stack direction='row' gap={2} alignItems={'center'} justifyContent={'center'} sx={{ marginBottom: 2 }}>
             <IconButton onClick={goPreviousQuestion} disabled={currentQuestion === 0}>
                 <ArrowBackIosIcon/>
