@@ -18,12 +18,16 @@ interface State {
 
 }
 
-const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
-// const MASTER_KEY = import.meta.env.VITE_JSONBIN_MASTER_KEY;
-const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
+//Variables y claves para jsonbin.io
 
-const PROD_API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`
-// const API_URL = import.meta.env.PROD ? `${PROD_API_URL}` : 'http://localhost:5173/data.json'
+    // const BIN_ID = import.meta.env.VITE_JSONBIN_ID;
+    // const API_KEY = import.meta.env.VITE_JSONBIN_KEY;
+
+    // const PROD_API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`
+    // const API_URL = import.meta.env.PROD ? `${PROD_API_URL}` : 'http://localhost:5173/data.json'
+
+//Ruta a api propia en RENDER.COM
+const QUIZTER_API = `https://quizter-question-api.onrender.com/api/questions`
 
 
 export const useQuestionStore = create<State>()(persist((set, get) => {
@@ -37,33 +41,26 @@ export const useQuestionStore = create<State>()(persist((set, get) => {
 
 
         fetchQuestions: async (limit: number) => {
-            // const res = await fetch(`${API_URL}/data.json`)
-            // if (!res.ok) {
-            //     throw new Error('Error al obtener preguntas desde JSONBin')
-            // }
-            // const json = await res.json()
-            // const data = json
 
-            // ////////////////////////
         //    let {isLoading} = get()
         //    isLoading = true
 
             set({isLoading:true, error:null})
 
             try {
-                const response = await fetch (`${PROD_API_URL}`, {
-                headers: {
-                    // "X-Master-Key": MASTER_KEY,
-                    "X-Access-Key": API_KEY,
-                    }
-                })
+                // const response = await fetch (`${PROD_API_URL}`, {
+                // headers: {
+                //     // "X-Master-Key": MASTER_KEY,
+                //     "X-Access-Key": API_KEY,
+                //     }
+                // })
+                const response = await fetch (`${QUIZTER_API}`)
 
                 if (!response.ok) {
                     throw new Error(`Error al obtener preguntas: ${response.statusText}`)
                 }
 
-                const json = await response.json()
-                const data = json?.record
+                const data = await response.json()
 
                 //  ///////////////////////
 
